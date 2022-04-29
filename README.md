@@ -31,7 +31,34 @@ pacs/
 |–– images/
 |–– splits/
 ```
+### Training and testing
+- You can run training and testing directly by the linux command(PACS dataset as example) like below:
+```
+python train.py --root ${DATASET_PATH} --trainer ${TRAINER} --source-domains art_painting --target-domains cartoon photo sketch --dataset-config-file ${DASSL_PATH}/configs/datasets/dg/pacs.yaml --config-file ${DASSL_PATH}/configs/trainers/dg/vanilla/pacs.yaml --output-dir ${OUTPUT_DIR} MODEL.BACKBONE.NAME resnet18
+```
 
+## VSCode debugger launch config
+``` json
+{
+    "name": "Python: train.py",
+    "type": "python",
+    "request": "launch",
+    "program": "${workspaceRoot}/train.py",
+    "console": "integratedTerminal",
+    "justMyCode": false,
+    "args": [
+        "--root","~/dataset/",
+        "--seed", "1",
+        "--trainer", "Vanilla_freezen",
+        "--source-domains", "art_painting",
+        "--target-domains", "cartoon", "photo", "sketch",
+        "--dataset-config-file", "configs/datasets/shape_task1_pacs.yaml",
+        "--config-file", "~/Dassl.pytorch/configs/trainers/dg/vanilla/pacs.yaml",       
+        "--output-dir", "shapetask1/pacs/Vanilla_singles/resnet18_nodetach/random/art_painting/seed1",
+        "MODEL.BACKBONE.NAME", "resnet18" 
+    ]
+}
+```
 
 
 
