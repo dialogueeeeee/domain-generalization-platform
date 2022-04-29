@@ -3,7 +3,7 @@
 - 本项目基于 **DASSL(v0.5.0)** [官方项目](https://github.com/KaiyangZhou/Dassl.pytorch)实现，采用继承设计和注册机制，使得开发人员和研究人员能够快速完成本地跨域分类任务的项目搭建和部署，同时也能够更方便的集成到自己的项目中。
 
 ## Installation & Prerequisite
-- 基于 pytorch 的 DASSL 安装过程，详见 https://github.com/KaiyangZhou/Dassl.pytorch#installation 官方教程;
+- The installation of DASSL based on pytorch, See the [official tutorial](https://github.com/KaiyangZhou/Dassl.pytorch#installation) for details;
 - It requires the following packages:
 ```
 Python 3.7
