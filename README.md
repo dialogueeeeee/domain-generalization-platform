@@ -106,10 +106,10 @@ done
 You can define your own **trainer**, **training config** and **dataset config** by following step:
 
 ### Custom trainer
-123
+- To creat your own trainer, you can refer to the template in the folder ``trainer/``
 
 ### Custom training config & dataset config
-You can set your own training\dataset parameters by changing the ``xxx.yaml`` template in the folder ``config/trainer`` or ``config/dataset``.
+You can set your own training or dataset parameters by changing the ``xxx.yaml`` template in the folder ``config/trainer`` or ``config/dataset``.
 
 ## VSCode debugger launch config
 ``` json
