@@ -32,9 +32,68 @@ pacs/
 |–– splits/
 ```
 ### Training and testing
-- You can run training and testing directly by the linux command(PACS dataset as example) like below:
+- You can run training and testing directly by the linux command (PACS dataset as example) like below:
 ```
 python train.py --root ${DATASET_PATH} --trainer ${TRAINER} --source-domains art_painting --target-domains cartoon photo sketch --dataset-config-file ${DASSL_PATH}/configs/datasets/dg/pacs.yaml --config-file ${DASSL_PATH}/configs/trainers/dg/vanilla/pacs.yaml --output-dir ${OUTPUT_DIR} MODEL.BACKBONE.NAME resnet18
+```
+- Or you can ``cd script`` and run ``bash res18.sh`` to train and test like below: 
+``` shell
+#!/bin/bash
+
+cd ..
+
+DATA=~/dataset/
+DASSL=~/Dassl.pytorch
+
+D1=art_painting
+D2=cartoon
+D3=photo
+D4=sketch
+
+################### leave one domain out setting
+DATASET=pacs
+TRAINER=Vanilla
+NET=resnet18
+
+for SEED in $(seq 1 2)
+do
+    for SETUP in $(seq 1 4)
+    do
+        if [ ${SETUP} == 1 ]; then
+            S1=${D2}
+            S2=${D3}
+            S3=${D4}
+            T=${D1}
+        elif [ ${SETUP} == 2 ]; then
+            S1=${D1}
+            S2=${D3}
+            S3=${D4}
+            T=${D2}
+        elif [ ${SETUP} == 3 ]; then
+            S1=${D1}
+            S2=${D2}
+            S3=${D4}
+            T=${D3}
+        elif [ ${SETUP} == 4 ]; then
+            S1=${D1}
+            S2=${D2}
+            S3=${D3}
+            T=${D4}
+        fi
+        
+        python train.py \
+        --root ${DATA} \
+        --seed ${SEED} \
+        --trainer ${TRAINER} \
+        --source-domains ${S1} ${S2} ${S3}  \
+        --target-domains ${T} \
+        --dataset-config-file ${DASSL}/configs/datasets/dg/${DATASET}.yaml \
+        --config-file ${DASSL}/configs/trainers/dg/vanilla/${DATASET}.yaml \
+        --output-dir baseline/${DATASET}/${TRAINER}/${NET}_nodetach/${T}/seed${SEED} \
+        MODEL.BACKBONE.NAME ${NET}
+    done
+done
+
 ```
 
 ## VSCode debugger launch config
