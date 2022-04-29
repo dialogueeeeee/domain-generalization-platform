@@ -95,6 +95,12 @@ do
 done
 
 ```
+- For only test, you can use ``--eval-only``. Meanwhile, you also need to provide the trained model and specify which model file (i.e. saved at which epoch) to use. For example, to use model.pth.tar-20 saved at output/source_only_office31/model, you can **add** following command:
+```
+--eval-only \
+--model-dir output/source_only_office31 \
+--load-epoch 20
+```
 
 ## VSCode debugger launch config
 ``` json
