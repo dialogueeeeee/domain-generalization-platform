@@ -1,4 +1,7 @@
 # domain-generalization-platform
+This project is implemented based on dassl (v0.5.0) [official project](https://github.com/KaiyangZhou/Dassl.pytorch) and adopts inheritance design and registration mechanism, so that developers and researchers can quickly complete the project construction and deployment of local cross domain classification tasks, and can also be more easily integrated into their own projects.
+
+
 - 基于 **DASSL** 的跨域分类任务模板。
 - 本项目基于 **DASSL(v0.5.0)** [官方项目](https://github.com/KaiyangZhou/Dassl.pytorch)实现，采用继承设计和注册机制，使得开发人员和研究人员能够快速完成本地跨域分类任务的项目搭建和部署，同时也能够更方便的集成到自己的项目中。
 
