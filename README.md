@@ -106,7 +106,15 @@ done
 You can define your own **trainer**, **training config** and **dataset config** by following step:
 
 ### Custom trainer
-- To creat your own trainer, you can refer to the template in the folder ``trainer/``
+- To creat your own trainer, you can refer to the template in the folder ``trainer/Vanilla_freezen.py``;
+- It mainly realizes the call of new classes through inheritance design and registration mechanism like below:
+``` python
+@TRAINER_REGISTRY.register()
+class name_of_your_trainer(TrainerX):
+    """Your own trainer."""
+    def __init__(self, cfg):
+    ### ... ###
+```
 
 ### Custom training config & dataset config
 You can set your own training or dataset parameters by changing the ``xxx.yaml`` template in the folder ``config/trainer`` or ``config/dataset``.
