@@ -102,6 +102,15 @@ done
 --load-epoch 20
 ```
 
+## Custom settings
+You can define your own **trainer**, **training config** and **dataset config** by following step:
+
+### Custom trainer
+123
+
+### Custom training config & dataset config
+You can set your own training\dataset parameters by changing the ``xxx.yaml`` template in the folder ``config/trainer`` or ``config/dataset``.
+
 ## VSCode debugger launch config
 ``` json
 {
