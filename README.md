@@ -115,6 +115,7 @@ class name_of_your_trainer(TrainerX):
     def __init__(self, cfg):
     ### ... ###
 ```
+- For more details and code implementation, please refer to the [official tutorial](https://github.com/KaiyangZhou/Dassl.pytorch#write-a-new-trainer).
 
 ### Custom training config & dataset config
 You can set your own training or dataset parameters by changing the ``xxx.yaml`` template in the folder ``config/trainer`` or ``config/dataset``.
