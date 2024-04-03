@@ -146,16 +146,5 @@ You can set your own training or dataset parameters by changing the ``xxx.yaml``
 }
 ```
 
-## Citation
-Please consider citing our papers in your publications if the project helps your research.
-```
-@article{zhou2020domain,
-  title={Domain Adaptive Ensemble Learning},
-  author={Zhou, Kaiyang and Yang, Yongxin and Qiao, Yu and Xiang, Tao},
-  journal={IEEE Transactions on Image Processing (TIP)},
-  year={2021}
-}
-```
-
 
 
